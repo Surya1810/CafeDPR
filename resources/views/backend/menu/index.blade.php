@@ -87,13 +87,7 @@
                                                 {{ $data->deskripsi }}
                                             </td>
                                             <td>
-                                                @if ($data->kategori == 'Makanan')
-                                                    <span class="badge badge-secondary">Makanan</span>
-                                                @elseif ($data->kategori == 'Minuman')
-                                                    <span class="badge badge-secondary">Minuman</span>
-                                                @else
-                                                    <span class="badge badge-secondary">Lainnya</span>
-                                                @endif
+                                                <span class="badge badge-secondary">{{ $data->kategori }}</span>
                                             </td>
                                             <td>
                                                 {{ formatRupiah($data->harga) }}
@@ -108,8 +102,8 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <a href="{{ route('menu.edit', $data->id) }}" target="_blank"
-                                                    class="btn btn-secondary"><i class="fa-solid fa-pencil"></i></a>
+                                                <a href="{{ route('menu.edit', $data->id) }}"class="btn btn-secondary"><i
+                                                        class="fa-solid fa-pencil"></i></a>
 
                                                 <button class="btn btn-warning" onclick="MenuHabis({{ $data->id }})"><i
                                                         class="fa-solid fa-box-open"></i>

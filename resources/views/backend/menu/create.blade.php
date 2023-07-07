@@ -43,8 +43,7 @@
                                             <label for="nama">Nama Menu</label>
                                             <input type="text" name="nama"
                                                 class="form-control @error('nama') is-invalid @enderror" id="nama"
-                                                placeholder="Tulis Nama Menu" value="{{ old('nama') }}" required
-                                                autocomplete="off">
+                                                placeholder="Tulis Nama Menu" value="{{ old('nama') }}" required>
                                             @error('nama')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -60,7 +59,7 @@
                                                 <option></option>
                                                 <option value="Makanan">Makanan</option>
                                                 <option value="Minuman">Minuman</option>
-                                                <option value="Lainnya">Lainnya</option>
+                                                <option value="Special">Special</option>
                                             </select>
                                             @error('kategori')
                                                 <span class="invalid-feedback" role="alert">
@@ -91,8 +90,7 @@
                                         <div class="form-group">
                                             <label for="harga" class="col-md-2">Harga</label>
                                             <input type="text" name="harga" class="price form-control" id="harga"
-                                                placeholder="Masukan Nominal Harga" autocomplete="off"
-                                                value="{{ old('harga') }}" required>
+                                                placeholder="Masukan Nominal Harga" value="{{ old('harga') }}" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-12">

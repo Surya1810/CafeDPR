@@ -78,17 +78,38 @@ class MenuController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Menu $menu)
+    public function edit($id)
     {
-        //
+        $data = Menu::find($id);
+        return view('backend.menu.edit', compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Menu $menu)
+    public function update(Request $request, $id)
     {
-        //
+        $menu = Menu::find($id);
+
+        $menu->nama = $request->nama;
+        $menu->deskripsi = $request->deskripsi;
+        $menu->kategori = $request->kategori;
+        $menu->harga = $request->harga;
+
+        $file = $request->file('foto');
+        if (isset($file)) {
+            $fileName = 'Menu/foto_produk_' . uniqid() . '.' . 'webp';
+            $image = Image::make($file)->encode('webp', 90)->fit(300, 300);
+
+            //Foto
+            if (isset($image)) {
+                Storage::disk('public')->put($fileName, $image);
+                $menu->foto = $fileName;
+            }
+        }
+        $menu->save();
+
+        return redirect()->route('menu.index')->with(['pesan' => 'Menu Berhasil Diubah', 'level-alert' => 'alert-success']);
     }
 
     /**
