@@ -65,8 +65,8 @@
                     style="border-color: #e3d0c9">
                     <div class="col-md-4 d-flex align-items-center">
                         <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-                            <img src="{{ asset('assets/DPR.png') }}" alt="logo" class="bi shadow-lg" width="30"
-                                height="24">
+                            <img src="https://ik.imagekit.io/surya1810/DPR/DPR.png?updatedAt=1688292317578"
+                                alt="logo" class="bi shadow-lg" width="30" height="30">
                         </a>
                         <span class="mb-3 mb-md-0 text-light">&copy; 2023 DPR Coffee, Inc</span>
                     </div>
@@ -74,7 +74,7 @@
                     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex" sty>
                         <li class="ms-3">
                             <a class="text-body-secondary" href="https://www.instagram.com/coffee_dpr/">
-                                <svg class="bi" width="24" height="24" style="fill: white">
+                                <svg class="bi" width="30" height="30" style="fill: white">
                                     <use xlink:href="#instagram" />
                                 </svg>
                             </a>

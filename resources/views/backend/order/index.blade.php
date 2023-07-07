@@ -64,48 +64,6 @@
                                                     data-target="#cek{{ $data->id }}">
                                                     Lihat
                                                 </button>
-
-
-                                                <!-- Modal Data-->
-                                                <div class="modal fade" id="cek{{ $data->id }}" tabindex="-1"
-                                                    role="dialog" aria-labelledby="exampleModalLongTitle"
-                                                    aria-hidden="true">
-                                                    <div class="modal-dialog modal-lg" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLongTitle">
-                                                                    Pesanan</h5>
-                                                                <button type="button" class="close" data-dismiss="modal"
-                                                                    aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <div class="row">
-                                                                    <div class="col-6 text-left">
-                                                                        <h5>Menu</h5>
-                                                                    </div>
-                                                                    <div class="col-6 text-left">
-                                                                        <h5>Jumlah</h5>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-6 text-left">
-                                                                        <h4>{{ $data->menu }}</h4>
-                                                                    </div>
-                                                                    <div class="col-6 text-left">
-                                                                        <h4>{{ $data->jumlah }}</h4>
-                                                                    </div>
-                                                                </div>
-                                                                <hr>
-                                                                <div class="row">
-                                                                    <div class="col-12 text-left">
-                                                                        <h3>Total: {{ $data->total }}</h3>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                             </td>
                                             <td>{{ $data->total }}</td>
                                             <td>
@@ -146,27 +104,46 @@
         </div>
     </section>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+    @foreach ($order as $data)
+        <!-- Modal -->
+        <div class="modal fade" id="cek{{ $data->id }}" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Pesanan</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-6 text-left">
+                                <h5>Menu</h5>
+                            </div>
+                            <div class="col-6 text-left">
+                                <h5>Jumlah</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 text-left">
+                                <h4>{{ $data->menu }}</h4>
+                            </div>
+                            <div class="col-6 text-left">
+                                <h4>{{ $data->jumlah }}</h4>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-12 text-left">
+                                <h3>Total: {{ $data->total }}</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    @endforeach
 @endsection
 
 @push('scripts')
@@ -183,9 +160,6 @@
     <script src="{{ asset('assets/adminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <script src="{{ asset('assets/adminLTE/plugins/toastr/toastr.min.js') }}"></script>
     <script src="{{ asset('assets/adminLTE/plugins/inputmask/jquery.inputmask.min.js') }}"></script>
-    <!-- date-range-picker -->
-    <script src="{{ asset('assets/adminLTE/plugins/moment/moment.min.js') }}"></script>
-    <script src="{{ asset('assets/adminLTE/plugins/daterangepicker/daterangepicker.js') }}"></script>
 
     <script type="text/javascript">
         $('#MenuTable').DataTable({
@@ -224,43 +198,6 @@
             // width: "700px",
             "responsive": true,
         }).buttons().container().appendTo('#MenuTable_wrapper .col-md-6:eq(0)');
-
-        //Date range picker
-        $('#filter_tanggal').daterangepicker({
-            "locale": {
-                "format": "MM/DD/YYYY",
-                "separator": " - ",
-                "applyLabel": "Apply",
-                "cancelLabel": "Cancel",
-                "fromLabel": "From",
-                "toLabel": "To",
-                "customRangeLabel": "Custom",
-                "daysOfWeek": [
-                    "Su",
-                    "Mo",
-                    "Tu",
-                    "We",
-                    "Th",
-                    "Fr",
-                    "Sa"
-                ],
-                "monthNames": [
-                    "January",
-                    "February",
-                    "March",
-                    "April",
-                    "May",
-                    "June",
-                    "July",
-                    "August",
-                    "September",
-                    "October",
-                    "November",
-                    "December"
-                ],
-                "firstDay": 1
-            }
-        })
 
         function MenuHabis(id) {
             Swal.fire({

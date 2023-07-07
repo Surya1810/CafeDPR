@@ -56,9 +56,9 @@
         <aside class="main-sidebar sidebar-dark-white elevation-4 sidebar-no-expand bg-sidebar-dpr">
             <!-- Logo -->
             <a href="{{ route('dashboard') }}" class="logo-switch bg-sidebar-dpr">
-                <img src="{{ asset('assets/DPR.png') }}" alt="dpr-lg"
+                <img src="https://ik.imagekit.io/surya1810/DPR/DPR.png?updatedAt=1688292317578" alt="dpr-lg"
                     class="shadow-lg rounded-circle brand-image-xl logo-xs" width="30px">
-                <img src="{{ asset('assets/DPR.png') }}" alt="dpr-lg"
+                <img src="https://ik.imagekit.io/surya1810/DPR/DPR.png?updatedAt=1688292317578" alt="dpr-lg"
                     class="shadow-lg rounded-circle brand-image-xs logo-xl text-center" width="70px">
             </a>
 
@@ -197,6 +197,8 @@
 
     <!-- AdminLTE App -->
     <script src="{{ asset('assets/adminLTE/dist/js/adminlte.min.js') }}"></script>
+
+    <script src="{{ asset('assets/adminLTE/plugins/toastr/toastr.min.js') }}"></script>
 
     <script>
         /*** add active class and stay opened when selected ***/

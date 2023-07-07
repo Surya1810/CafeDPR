@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="{{ asset('assets/adminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/adminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/adminLTE/plugins/toastr/toastr.min.css') }}">
-    <!-- daterange picker -->
-    <link rel="stylesheet" href="{{ asset('assets/adminLTE/plugins/daterangepicker/daterangepicker.css') }}">
 @endpush
 
 @section('content')
@@ -46,26 +44,6 @@
                                     class="fa-solid fa-plus"></i> Buat Menu</a>
                         </div>
                         <div class="card-body table-responsive">
-                            {{-- <form action="{{ route('menu.index') }}">
-                                <div class="col-md-4 pb-2">
-                                    <label>Filter Tanggal</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="far fa-calendar-alt"></i>
-                                            </span>
-                                        </div>
-                                        <input type="text" class="form-control float-right" id="filter_tanggal"
-                                            name="filter_tanggal" value="{{ request('filter_tanggal') }}">
-                                        <span class="input-group-append">
-                                            <button type="submit" class="btn btn-outline-secondary ">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </form>
-                            <hr> --}}
                             <table id="MenuTable" class="table table-bordered text-sm">
                                 <thead class="table-dark text-nowrap">
                                     <tr>
@@ -151,9 +129,6 @@
     <script src="{{ asset('assets/adminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <script src="{{ asset('assets/adminLTE/plugins/toastr/toastr.min.js') }}"></script>
     <script src="{{ asset('assets/adminLTE/plugins/inputmask/jquery.inputmask.min.js') }}"></script>
-    <!-- date-range-picker -->
-    <script src="{{ asset('assets/adminLTE/plugins/moment/moment.min.js') }}"></script>
-    <script src="{{ asset('assets/adminLTE/plugins/daterangepicker/daterangepicker.js') }}"></script>
 
     <script type="text/javascript">
         $('#MenuTable').DataTable({
@@ -192,43 +167,6 @@
             // width: "700px",
             "responsive": true,
         }).buttons().container().appendTo('#MenuTable_wrapper .col-md-6:eq(0)');
-
-        //Date range picker
-        $('#filter_tanggal').daterangepicker({
-            "locale": {
-                "format": "MM/DD/YYYY",
-                "separator": " - ",
-                "applyLabel": "Apply",
-                "cancelLabel": "Cancel",
-                "fromLabel": "From",
-                "toLabel": "To",
-                "customRangeLabel": "Custom",
-                "daysOfWeek": [
-                    "Su",
-                    "Mo",
-                    "Tu",
-                    "We",
-                    "Th",
-                    "Fr",
-                    "Sa"
-                ],
-                "monthNames": [
-                    "January",
-                    "February",
-                    "March",
-                    "April",
-                    "May",
-                    "June",
-                    "July",
-                    "August",
-                    "September",
-                    "October",
-                    "November",
-                    "December"
-                ],
-                "firstDay": 1
-            }
-        })
 
         function HapusMenu(id) {
             Swal.fire({

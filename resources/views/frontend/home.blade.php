@@ -199,20 +199,22 @@
     </div>
 
     <!-- About Us -->
-    <div class="pt-5 " id="about_us">
+    <div class="pt-5 d">
         <h1 style="color: #e3d0c9" class="lato text-center"><strong>ABOUT US</strong></h1>
-        <div class="card mb-3 p-3 bg-about" id="about">
-            <div class="row">
-                <div class="col-4 d-flex justify-content-center">
-                    <img src="https://ik.imagekit.io/surya1810/DPR/DPR.png?updatedAt=1688292317578"
-                        class="img-fluid shadow-lg rounded-circle m-auto" alt="Logo">
-                </div>
-                <div class="col-8">
-                    <p class="card-text"><i class="fa-regular fa-clock"></i> Jam Operasional</p>
-                    <p class="card-text">Sabtu-Kamis | 10.00 - 22.00</p>
-                    <p class="card-text">Jumat | 13.00 - 22.00</p><br>
-                    <p class="card-text mt-1"><i class="fa-solid fa-phone-volume"></i> Order</p>
-                    <p class="card-text">0895 0451 3287</p>
+        <div class="row justify-content-center">
+            <div class="card mb-3 p-3 bg-about mobile">
+                <div class="row">
+                    <div class="col-4 d-flex justify-content-center">
+                        <img src="https://ik.imagekit.io/surya1810/DPR/DPR.png?updatedAt=1688292317578"
+                            class="img-fluid shadow-lg rounded-circle m-auto" alt="Logo">
+                    </div>
+                    <div class="col-8">
+                        <p class="card-text"><i class="fa-regular fa-clock"></i> Jam Operasional</p>
+                        <p class="card-text">Sabtu-Kamis | 10.00 - 22.00</p>
+                        <p class="card-text">Jumat | 13.00 - 22.00</p><br>
+                        <p class="card-text mt-1"><i class="fa-solid fa-phone-volume"></i> Order</p>
+                        <p class="card-text">0895 0451 3287</p>
+                    </div>
                 </div>
             </div>
         </div>
